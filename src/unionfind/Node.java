@@ -24,4 +24,40 @@ package unionfind;
  */
 public class Node {
 
+	char key;
+	Node father;
+	int rank;
+	
+	/**
+	 * Build the class
+	 * @param key a key to be stored
+	 */
+	public Node(char key)
+	{
+		this.key = key;
+	}
+
+	public char getKey() {
+		return key;
+	}
+
+	public void setKey(char key) {
+		this.key = key;
+	}
+
+	public Node getFather() {
+		return father;
+	}
+
+	public void setFather(Node father) {
+		this.father = father;
+	}
+
+	public int getRank() {
+		return rank;
+	}
+
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
 }
