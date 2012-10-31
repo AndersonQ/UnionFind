@@ -13,6 +13,13 @@ public class Edge {
 	Node v;
 	int cost;
 	
+	public Edge(Node u, Node v, int cost)
+	{
+		this.u = u;
+		this.v = v;
+		this.cost = cost;
+	}
+	
 	public Node getU() {
 		return u;
 	}
@@ -34,6 +41,6 @@ public class Edge {
 	
 	public String toString()
 	{
-		return String.format("Edge " + u.toString() + "-" + v.toString() + "cost: " + cost);
+		return String.format("Edge " + u.toString() + "-" + v.toString() + " cost: " + cost);
 	}
 }
