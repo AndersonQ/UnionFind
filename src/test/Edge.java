@@ -31,4 +31,9 @@ public class Edge {
 	public void setCost(int cost) {
 		this.cost = cost;
 	}
+	
+	public String toString()
+	{
+		return String.format("Edge " + u.toString() + "-" + v.toString() + "cost: " + cost);
+	}
 }
