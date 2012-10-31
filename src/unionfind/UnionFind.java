@@ -17,6 +17,8 @@
 
 package unionfind;
 
+import java.util.Vector;
+
 import test.Edge;
 
 /**
@@ -49,7 +51,7 @@ public class UnionFind {
 		}
 		else
 		{
-			return findSet(node);
+			return findSet(node.getFather());
 		}
 	}
 	
@@ -72,8 +74,9 @@ public class UnionFind {
 	 * The Krustal algorithm to get the generate tree with minimal cost
 	 * @param nodes all nodes in the graph
 	 * @param edges all edges in the graph
+	 * @return the graph total cost
 	 */
-	public void kruskal(Node[] nodes, Edge[] edges)
+	public int kruskal(Vector<Node> nodes, Vector<Edge> edges)
 	{
 		int totalcost = 0;
 		for(Node node: nodes)
@@ -90,5 +93,6 @@ public class UnionFind {
 				totalcost += edge.getCost();
 			}
 		}
+		return totalcost;
 	}
 }
