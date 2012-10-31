@@ -31,17 +31,38 @@ public class UnionFind {
 	
 	public void makeSet(Node node)
 	{
-		
+		node.setFather(node);
 	}
 	
+	/**
+	 * Find the element that represent one set
+	 * @param node a node that belongs to a set
+	 * @return Represent of node's set, or null if there is not node in any set
+	 */
 	public Node findSet(Node node)
 	{
-		return node;
-		
+		if(node.getFather() == node)
+		{
+			return node;
+		}
+		else
+		{
+			return findSet(node);
+		}
 	}
 	
-	public void union (Node set1, Node set2)
+	/**
+	 * Put together the tree that contains node1 below the tree that contains node2 
+	 * @param node1 a node
+	 * @param node2 a node
+	 */
+	public void union (Node node1, Node node2)
 	{
+		Node root1, root2;
 		
+		root1 = findSet(node1);
+		root2 = findSet(node2);
+		
+		root1.setFather(root2);
 	}
 }
